@@ -1,36 +1,17 @@
-import React, { useContext } from "react";
-import useFetch from "../utilities/useFetch";
-import SearchContext from "../context/searchContext";
-import SearchResults from "../components/search-result";
+import React from "react";
 import Navbar from "../components/navbar";
 import {
   aboutUs,
   articles,
-  blueShape,
-  circlePic,
   cvReview,
   navigator,
   networking,
 } from "../assets/assets.export";
-import { features } from "./utils";
 import Footer from "../components/footer";
 import Input from "../components/input";
 
 const Homepage: React.FC = () => {
-  const { loading, error, data } = useFetch(
-    "https://jsonplaceholder.typicode.com/photos"
-  );
-  const searchContext = useContext(SearchContext);
-  let searchKey = searchContext?.searchKey;
-  let newData = data?.filter((_: any, index: number) => index < 750);
-
-  if (searchKey && newData) {
-    return (
-      <>
-        <SearchResults data={newData} />
-      </>
-    );
-  }
+ 
   return (
     <div className="">
       <div
@@ -65,18 +46,7 @@ const Homepage: React.FC = () => {
                 </button>
               </div>
             </div>
-            {/* <div className="">
-            <img
-              src={blueShape}
-              alt=""
-              className="absolute -top-52 -right-[129px] scale-75"
-            />
-            <img
-              src={circlePic}
-              alt=""
-              className="absolute -top-48 right-8 scale-75"
-            />
-          </div> */}
+            
           </div>
         </div>
       </div>
