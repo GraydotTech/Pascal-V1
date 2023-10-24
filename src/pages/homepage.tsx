@@ -3,12 +3,16 @@ import Navbar from "../components/navbar";
 import {
   aboutUs,
   articles,
+  blueStar,
   cvReview,
   navigator,
   networking,
 } from "../assets/assets.export";
+import fullStar from "../assets/Vector (4).svg";
+import halfStar from "../assets/Vector (5).svg";
 import Footer from "../components/footer";
 import Input from "../components/input";
+import { testimonials } from "./utils";
 
 const Homepage: React.FC = () => {
  
@@ -46,11 +50,10 @@ const Homepage: React.FC = () => {
                 </button>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
-      <div className=" ">
+      <div className=" " id="about-us">
         <div className="py-[100px] flex justify-around items-center bg-[#F2F2F2]">
           <div className="w-[28%]">
             <img src={aboutUs} alt="" className="" />
@@ -58,18 +61,19 @@ const Homepage: React.FC = () => {
           <div className="text-black w-1/2 text-[28px] leading-[48px]">
             <h1 className=" mb-16 text-5xl font-semibold">About Us</h1>
             <p className="mb-12">
-              At Pascal, we believe that everyone deserves a true and dedicated
-              companion in their tech career journey.
+              At Pascal, we understand the unique challenges you face in your
+              tech career journey, and we're here to be your unwavering
+              companion.
             </p>
             <p>
-              We know how daunting navigating the professional world can be, and
-              that's why we've created a platform that serves as the only friend
-              you'll ever need for your career.
+              Navigating the professional world can be intimidating, and that's
+              where we come in. Our platform is designed to be your lifelong
+              friend throughout your career.
             </p>
           </div>
         </div>
 
-        <div className="bg-[#ECECEC] py-[100px] ">
+        <div className="bg-[#ECECEC] py-[100px] " id="features">
           <h1 className="text-deepBB mb-16 text-5xl font-semibold">
             Pascal's Features
           </h1>
@@ -108,9 +112,9 @@ const Homepage: React.FC = () => {
                 <img
                   src={cvReview}
                   alt=""
-                  className="w-[350px] h-[350px] ml-auto"
+                  className="w-[200px] h-[200px] ml-auto"
                 />
-                <div className="-mt-[200px]">
+                <div className="">
                   <h1 className="text-4xl font-bold mb-11">CV Review</h1>
                   <p className="text-2xl w-[350px] leading-[45px]">
                     Need expert eyes on your resume? Pascal offers a CV review
@@ -168,6 +172,40 @@ const Homepage: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="" id="reviews">
+          <div className="flex justify-center items-center gap-10 bg-white py-14 text-[#1C6EC0]">
+            <img src={blueStar} alt="" />
+            <h1 className="text-4xl font-semibold">
+              What people are saying about us
+            </h1>
+            <img src={blueStar} alt="" />
+          </div>
+          <div className="bg-[#DEEEFF] text-black flex gap-7 px-5 pt-14 pb-10 justify-center">
+            {testimonials.map((testimony) => (
+              <>
+                <div className="flex flex-col justify-between items-center w-[30%]">
+                  <div className="">
+                    <img
+                      src={testimony.img}
+                      alt=""
+                      className="h-[200px] mx-auto mb-10"
+                    />
+                    <h3 className="text-3xl font-semibold mb-4">
+                      {testimony.name}
+                    </h3>
+                    <p className="text-2xl font-normal">{testimony.desc}</p>
+                  </div>
+                  <div className="mt-8 flex gap-1">
+                    {testimony.star.map((_) => (
+                      <img src={fullStar} alt="" />
+                    ))}
+                    <img src={halfStar} alt="" />
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
+        </div>
         <div className="bg-[#F2F2F2] py-[100px] text-left">
           <div className="w-[62%] ml-auto text-black">
             <h1 className="text-5xl font-semibold mb-3">Get in touch</h1>
@@ -176,7 +214,7 @@ const Homepage: React.FC = () => {
             </p>
           </div>
           <div className="h-[400px] w-[80%] mx-auto mt-16 flex text-black">
-            <div className="bg-[#0072DB] h-full w-[36%]"></div>
+            <div className="bg-[#0072DB] h-full w-[20%]"></div>
             <div className="bg-white h-full w-[64%]">
               <div className="flex flex-col gap-8 w-4/5 mx-auto h-full justify-center">
                 <Input type="text" name="first_name" placeholder="First name" />
@@ -186,6 +224,9 @@ const Homepage: React.FC = () => {
                   placeholder="Your message here"
                   name=""
                 />
+                <button className="bg-[#0072DB] text-white">
+                  Send Message
+                </button>
               </div>
             </div>
           </div>

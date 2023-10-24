@@ -43,9 +43,9 @@ const Footer = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
             </p>
-            <button className="bg-[#293CE1] text-white rounded-[30px] w-[228px] text-xl">
+            {/* <button className="bg-[#293CE1] text-white rounded-[30px] w-[228px] text-xl">
               Contact Us
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

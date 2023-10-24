@@ -1,7 +1,10 @@
-import icon1 from "../assets/Group.svg"
-import icon2 from '../assets/Group (1).svg'
-import icon3 from '../assets/Vector (2).svg'
+import icon1 from "../assets/Group.svg";
+import icon2 from "../assets/Group (1).svg";
+import icon3 from "../assets/Vector (2).svg";
 import icon4 from "../assets/Vector (3).svg";
+import emekaPP from '../assets/Ellipse 5 (2).svg'
+import amandaPP from '../assets/amanda.svg'
+import michealPP from "../assets/micheal.svg";
 
 export const features = [
   {
@@ -25,3 +28,34 @@ export const features = [
     icon: icon4,
   },
 ];
+
+export const testimonials = [
+  {
+    img: emekaPP,
+    name: "Emeka",
+    desc: `As a newbie to the tech world, I can't express how grateful I am for this app.`,
+    star: [1, 2, 3, 4],
+  },
+  {
+    img: amandaPP,
+    name: "Amanda",
+    desc: `It has been an absolute game-changer for someone like me who is just starting to dip their toes into the vast ocean of technology.`,
+    star: [1, 2, 3, 4],
+  },
+  {
+    img: michealPP,
+    name: "Micheal",
+    desc: `This app is the future. It is the most beginner friendly app any newbie can ever have access to.`,
+    star: [1, 2, 3, 4],
+  },
+];
+
+export function scrollToSection (sectionId: string) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}

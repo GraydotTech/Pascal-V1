@@ -1,4 +1,5 @@
 import { logo } from "../assets/assets.export";
+import { scrollToSection } from "../pages/utils";
 
 const Navbar = () => {
   return (
@@ -8,10 +9,25 @@ const Navbar = () => {
       </h1>
 
       <div className="navlist text-[#000] text-xl font-semibold flex gap-24 items-center">
-        <span className="cursor-pointer">Products</span>
-        <span className="cursor-pointer">Pricing</span>
-        <span className="cursor-pointer">Docs</span>
-        <span className="cursor-pointer">Contact Us</span>
+        <span className="cursor-pointer">Home</span>
+        <span
+          className="cursor-pointer"
+          onClick={() => scrollToSection("features")}
+        >
+          Features
+        </span>
+        <span
+          className="cursor-pointer"
+          onClick={() => scrollToSection("about-us")}
+        >
+          About us
+        </span>
+        <span
+          className="cursor-pointer"
+          onClick={() => scrollToSection("reviews")}
+        >
+          Reviews
+        </span>
       </div>
       <div className="buttons flex gap-3">
         <button className="bg-[#293CE1] text-white rounded-[30px] w-[228px] text-xl">

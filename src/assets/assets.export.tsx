@@ -8,5 +8,6 @@ import navigator from './navigator.svg'
 import cvReview from './cv-review.svg'
 import networking from './networking.svg'
 import articles from './articles.svg'
+import blueStar from './Vector.svg'
 
-export { logo, circlePic, blueShape, aboutUs, navigator, networking, cvReview, articles }
+export { logo, circlePic, blueShape, aboutUs, navigator, networking, cvReview, articles, blueStar }
